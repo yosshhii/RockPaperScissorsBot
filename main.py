@@ -9,6 +9,8 @@ from config_data.config import load_config, Config
 
 from handlers import command_handlers, game_action_handlers, other_handlers
 
+from keyboards.set_menu import set_menu
+
 
 logger = logging.getLogger(__name__)
 
@@ -28,6 +30,10 @@ async def main() -> None:
     bot = Bot(token=config.bot.token,
               default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher()
+
+    logger.info('Создание меню бота')
+
+    await set_menu(bot)
 
     logger.info('Подключаем роутеры к диспетчеру')
 
