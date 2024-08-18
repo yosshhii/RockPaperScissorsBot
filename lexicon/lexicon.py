@@ -29,3 +29,8 @@ LEXICON_RU: dict[str: str | dict[str: str]] = {
     },
     'other_message': 'Извини, но я не понимаю тебя...',
 }
+
+
+LEXICON_COMMANDS_RU: dict[str: str | dict[str: str]] = {
+    '/help': 'Правила игры',
+}
